@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一個簡潔美觀的待辦事項管理工具">
+  <title>✨ To-Do List | 待辦事項</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated background blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-icon">📝</div>
+      <h1>My To-Do List</h1>
+      <p class="header-subtitle">管理你的每一天</p>
+    </header>
+
+    <!-- Stats bar -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-number" id="stat-total">0</span>
+        <span class="stat-label">全部</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" id="stat-active">0</span>
+        <span class="stat-label">進行中</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" id="stat-completed">0</span>
+        <span class="stat-label">已完成</span>
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="input-area">
+      <div class="input-wrapper">
+        <span class="input-icon">✏️</span>
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="新增待辦事項..."
+          autocomplete="off"
+          maxlength="100"
+        >
+        <button id="add-btn" class="add-btn" title="新增">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="active">進行中</button>
+      <button class="filter-btn" data-filter="completed">已完成</button>
+    </div>
+
+    <!-- Todo list -->
+    <ul id="todo-list" class="todo-list"></ul>
+
+    <!-- Empty state -->
+    <div id="empty-state" class="empty-state">
+      <div class="empty-icon">🎉</div>
+      <p class="empty-text">還沒有待辦事項</p>
+      <p class="empty-subtext">在上方輸入框新增一項吧！</p>
+    </div>
+
+    <!-- Footer actions -->
+    <div class="footer-actions" id="footer-actions" style="display: none;">
+      <button id="clear-completed-btn" class="clear-btn">🗑️ 清除已完成</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
